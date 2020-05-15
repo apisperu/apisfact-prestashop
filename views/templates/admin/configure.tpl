@@ -24,27 +24,27 @@
 *}
 
 <div class="panel">
-	<h3><i class="icon icon-credit-card"></i> {l s='Facturación Electrónica SUNAT' mod='ap_facturacion'}</h3>
+	<h3><i class="icon icon-credit-card"></i> {l s='Facturación Electrónica SUNAT' mod='apisfact_prestashop'}</h3>
 	<p>
-		<strong>{l s='!Bienvenido al módulo de facturación electrónica!' mod='ap_facturacion'}</strong><br />
-		{l s='Este módulo le permitirá emitir electrónicamente a la SUNAT.' mod='ap_facturacion'}<br />
-		{l s='Lo invitamos a visitar nuestra web ' mod='ap_facturacion'}
+		<strong>{l s='!Bienvenido al módulo de facturación electrónica!' mod='apisfact_prestashop'}</strong><br />
+		{l s='Este módulo le permitirá emitir electrónicamente a la SUNAT.' mod='apisfact_prestashop'}<br />
+		{l s='Lo invitamos a visitar nuestra web ' mod='apisfact_prestashop'}
 		<a href="https://apisperu.com/" target="_blank" >aquí</a>
 	</p>
 	<br />
 	<p>
-		{l s='¡Estamos felices de tenerte aquí!' mod='ap_facturacion'}
+		{l s='¡Estamos felices de tenerte aquí!' mod='apisfact_prestashop'}
 	</p>
 </div>
 
 <div class="panel">
-	<h3><i class="icon icon-tags"></i> {l s='Documentación' mod='ap_facturacion'}</h3>
+	<h3><i class="icon icon-tags"></i> {l s='Documentación' mod='apisfact_prestashop'}</h3>
 	<p>
-		&raquo; {l s='Puedes revisar nuestra documentación desde aquí' mod='ap_facturacion'} :
+		&raquo; {l s='Puedes revisar nuestra documentación desde aquí' mod='apisfact_prestashop'} :
 		<ul>
-			<li><a href="https://apisperu.com/servicios/facturacion/" target="_blank">{l s='Página Web' mod='ap_facturacion'}</a></li>
-			<li><a href="https://facturacion.apisperu.com/doc" target="_blank">{l s='Documentación' mod='ap_facturacion'}</a></li>
-			<li><a href="http://swagger.apisperu.com/?url=https://facturacion.apisperu.com/swagger" target="_blank">{l s='Swagger UI' mod='ap_facturacion'}</a></li>
+			<li><a href="https://apisperu.com/servicios/facturacion/" target="_blank">{l s='Página Web' mod='apisfact_prestashop'}</a></li>
+			<li><a href="https://facturacion.apisperu.com/doc" target="_blank">{l s='Documentación' mod='apisfact_prestashop'}</a></li>
+			<li><a href="http://swagger.apisperu.com/?url=https://facturacion.apisperu.com/swagger" target="_blank">{l s='Swagger UI' mod='apisfact_prestashop'}</a></li>
 		</ul>
 	</p>
 </div>

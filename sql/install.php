@@ -25,16 +25,16 @@
 */
 $sql = array();
 
-$sql[] = 'CREATE TABLE IF NOT EXISTS `' . _DB_PREFIX_ . 'ap_facturacion` (
-    `id_ap_facturacion` int(11) NOT NULL AUTO_INCREMENT,
-    `id_order` int(10) NOT NULL,
+$sql[] = 'CREATE TABLE IF NOT EXISTS `' . _DB_PREFIX_ . 'apisfact_prestashop` (
+    `id_apisfact_prestashop` int(11) NOT NULL AUTO_INCREMENT,
+    `id_order` int(10) UNSIGNED NOT NULL,
     `success` int(1) DEFAULT 0,
     `response_id` VARCHAR(32) DEFAULT NULL,
     `response_code` VARCHAR(255) DEFAULT NULL,
-    `response_description` VARCHAR(32) DEFAULT NULL,
+    `response_description` VARCHAR(255) DEFAULT NULL,
     `response_notes` TEXT DEFAULT NULL,
-    PRIMARY KEY (`id_ap_facturacion`),
-    FOREIGN KEY (`id_order`) REFERENCES `' . _DB_PREFIX_ . 'orders`(`id_order`)
+    `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id_apisfact_prestashop`)
 ) ENGINE=' . _MYSQL_ENGINE_ . ' DEFAULT CHARSET=utf8;';
 
 foreach ($sql as $query) {
