@@ -52,7 +52,7 @@ class Apisfact_Prestashop extends Module
         parent::__construct();
 
         $this->displayName = $this->l('Facturación Electrónica SUNAT');
-        $this->description = $this->l('Emisión electrónica mediante el servicio https://apisperu.com/servicios/facturacion/');
+        $this->description = $this->l('Emisión electrónica de boletas y facturas mediante APIsPERU');
 
         $this->confirmUninstall = $this->l('¿Está seguro que desea desinstalar este modulo?');
 
@@ -66,8 +66,12 @@ class Apisfact_Prestashop extends Module
     public function install()
     {
         Configuration::updateValue('APISFACT_PRESTASHOP_TOKEN', '');
-        Configuration::updateValue('APISFACT_PRESTASHOP_SERIEF', '');
-        Configuration::updateValue('APISFACT_PRESTASHOP_SERIEB', '');
+
+        Configuration::updateValue('APISFACT_PRESTASHOP_SERIEF', 'F001');
+        Configuration::updateValue('APISFACT_PRESTASHOP_NUMEROF', '0');
+
+        Configuration::updateValue('APISFACT_PRESTASHOP_SERIEB', 'B001');
+        Configuration::updateValue('APISFACT_PRESTASHOP_NUMEROB', '0');
 
         include(dirname(__FILE__).'/sql/install.php');
 
@@ -81,8 +85,13 @@ class Apisfact_Prestashop extends Module
     public function uninstall()
     {
         Configuration::deleteByName('APISFACT_PRESTASHOP_TOKEN');
+
         Configuration::deleteByName('APISFACT_PRESTASHOP_SERIEF');
+        Configuration::deleteByName('APISFACT_PRESTASHOP_NUMEROF');
+
         Configuration::deleteByName('APISFACT_PRESTASHOP_SERIEB');
+        Configuration::deleteByName('APISFACT_PRESTASHOP_NUMEROB');
+
 
         include(dirname(__FILE__).'/sql/uninstall.php');
 
@@ -161,7 +170,7 @@ class Apisfact_Prestashop extends Module
                         'type' => 'text',
                         'prefix' => '<i class="icon icon-circle text-success"></i>',
                         'desc' => $this->l('Ingrese la serie para las facturas'),
-                        'name' => 'APISFACT-PRESTASHOP_SERIEF',
+                        'name' => 'APISFACT_PRESTASHOP_SERIEF',
                         'label' => $this->l('Serie Factura'),
                     ),
                     array(
@@ -169,8 +178,24 @@ class Apisfact_Prestashop extends Module
                         'type' => 'text',
                         'prefix' => '<i class="icon icon-circle text-success"></i>',
                         'desc' => $this->l('Ingrese el número inicial para las facturas'),
-                        'name' => 'APISFACT-PRESTASHOP_NUMEROF',
+                        'name' => 'APISFACT_PRESTASHOP_NUMEROF',
                         'label' => $this->l('Numero de Factura'),
+                    ),
+                    array(
+                        'col' => 3,
+                        'type' => 'text',
+                        'prefix' => '<i class="icon icon-circle"></i>',
+                        'desc' => $this->l('Ingrese la serie para las boletas'),
+                        'name' => 'APISFACT_PRESTASHOP_SERIEB',
+                        'label' => $this->l('Serie Boleta'),
+                    ),
+                    array(
+                        'col' => 3,
+                        'type' => 'text',
+                        'prefix' => '<i class="icon icon-circle"></i>',
+                        'desc' => $this->l('Ingrese el número inicial para las boletas'),
+                        'name' => 'APISFACT_PRESTASHOP_NUMEROB',
+                        'label' => $this->l('Numero de Boleta'),
                     )
                 ),
                 'submit' => array(
@@ -186,7 +211,11 @@ class Apisfact_Prestashop extends Module
     protected function getConfigFormValues()
     {
         return array(
-            'APISFACT_PRESTASHOP_TOKEN' => Configuration::get('APISFACT_PRESTASHOP_TOKEN', true)
+            'APISFACT_PRESTASHOP_TOKEN' => Configuration::get('APISFACT_PRESTASHOP_TOKEN', true),
+            'APISFACT_PRESTASHOP_SERIEF' => Configuration::get('APISFACT_PRESTASHOP_SERIEF', true),
+            'APISFACT_PRESTASHOP_NUMEROF' => Configuration::get('APISFACT_PRESTASHOP_NUMEROF', true),
+            'APISFACT_PRESTASHOP_SERIEB' => Configuration::get('APISFACT_PRESTASHOP_SERIEB', true),
+            'APISFACT_PRESTASHOP_NUMEROB' => Configuration::get('APISFACT_PRESTASHOP_NUMEROB', true)
         );
     }
 

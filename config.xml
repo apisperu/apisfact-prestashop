@@ -3,7 +3,7 @@
 	<name>apisfact_prestashop</name>
 	<displayName><![CDATA[Facturación Electrónica SUNAT]]></displayName>
 	<version><![CDATA[1.0.0]]></version>
-	<description><![CDATA[Emisión electrónica mediante el servicio https://apisperu.com/]]></description>
+	<description><![CDATA[Emisión electrónica de boletas y facturas mediante APIsPERU]]></description>
 	<author><![CDATA[ApisPeru]]></author>
 	<tab><![CDATA[payments_gateways]]></tab>
 	<is_configurable>1</is_configurable>
